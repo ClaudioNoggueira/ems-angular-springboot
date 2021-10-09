@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.claudionogueira.sms.entities.Empregado;
 
-@Repository
+@Repository // EmployeeRepository
 public interface EmpregadoRepository extends JpaRepository<Empregado, Integer> {
 
 }

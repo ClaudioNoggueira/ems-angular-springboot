@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "empregados")
+@Table(name = "empregados") //employees
 public class Empregado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,13 +18,15 @@ public class Empregado implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	//first name
 	@Column(name = "nome", nullable = false)
 	private String nome;
 
-	@Column(name = "nome")
+	//last name
+	@Column(name = "sobrenome")
 	private String sobrenome;
 
-	@Column(name = "nome", nullable = false)
+	@Column(name = "email", nullable = false)
 	private String email;
 
 	public Empregado() {
