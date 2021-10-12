@@ -11,4 +11,7 @@ public interface EmpregadoService {
 
 	// create employee rest api
 	void adicionarEmpregado(Empregado obj);
+
+	// find employee by id
+	Empregado pesquisarEmpregadoPorId(Integer id);
 }
