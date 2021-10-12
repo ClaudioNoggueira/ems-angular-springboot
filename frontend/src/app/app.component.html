@@ -1,5 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+        <li class="navbar-item">
+            <a routerLink="empregados" routerLinkActive="active" class="nav-link">Lista de empregados</a>
+        </li>
+    </ul>
+</nav>
+
 <h1 class="text-center">{{title}}</h1>
 
 <div class="container">
-    <app-lista-empregados></app-lista-empregados>
+    <router-outlet></router-outlet>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <span>Todos direitos reservados 2021 @ClaudioNogueira</span>
+    </div>
+</footer>
