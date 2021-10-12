@@ -12,7 +12,13 @@ export class EmpregadoService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // get all employees
   listarEmpregados(): Observable<Empregado[]> {
     return this.httpClient.get<Empregado[]>(`${this.baseUrl}`);
+  }
+
+  // add employee
+  adicionarEmpregado(obj: Empregado): Observable<Object> {
+    return this.httpClient.post(`${this.baseUrl}`, obj);
   }
 }
