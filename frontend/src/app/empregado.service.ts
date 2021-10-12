@@ -32,4 +32,9 @@ export class EmpregadoService {
     return this.httpClient.put(`${this.baseUrl}/${id}`, obj);
   }
 
+  // delete employee
+  excluirEmpregado(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
 }

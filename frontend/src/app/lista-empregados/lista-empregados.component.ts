@@ -53,4 +53,13 @@ export class ListaEmpregadosComponent implements OnInit {
   atualizarEmpregado(id: number) {
     this.router.navigate(['atualizar-empregado', id])
   }
+
+  // delete employee
+  excluirEmpregado(id: number) {
+    this.service.excluirEmpregado(id).subscribe(data => {
+      this.listarEmpregados();
+    },
+      error => console.log(error)
+    );
+  }
 }
