@@ -22,15 +22,27 @@ public class EmpregadoServiceImpl implements EmpregadoService {
 		return repo.findAll();
 	}
 
+	// add employee
 	@Override
 	public void adicionarEmpregado(Empregado obj) {
 		repo.save(obj);
 	}
 
+	// find employee by id
 	@Override
 	public Empregado pesquisarEmpregadoPorId(Integer id) {
 		return repo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Empregado com id '" + id + "' não existe"));
+	}
+
+	// update employee
+	@Override
+	public void atualizarEmpregado(Empregado obj, Integer id) {
+		Empregado attObj = this.pesquisarEmpregadoPorId(id);
+		attObj.setNome(obj.getNome());
+		attObj.setSobrenome(obj.getSobrenome());
+		attObj.setEmail(obj.getEmail());
+		repo.save(attObj);
 	}
 
 }

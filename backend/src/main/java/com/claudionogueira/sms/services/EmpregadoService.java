@@ -14,4 +14,7 @@ public interface EmpregadoService {
 
 	// find employee by id
 	Empregado pesquisarEmpregadoPorId(Integer id);
+
+	// update employee
+	void atualizarEmpregado(Empregado obj, Integer id);
 }
