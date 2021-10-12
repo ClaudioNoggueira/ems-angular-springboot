@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Empregado } from '../empregado';
 import { EmpregadoService } from '../empregado.service';
 
@@ -13,7 +13,7 @@ export class AtualizarEmpregadoComponent implements OnInit {
   empregado: Empregado = new Empregado();
   id!: number;
 
-  constructor(private service: EmpregadoService, private route: ActivatedRoute) { }
+  constructor(private service: EmpregadoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -22,6 +22,21 @@ export class AtualizarEmpregadoComponent implements OnInit {
     },
       error => console.log(error)
     );
+  }
+
+  // submit
+  enviar() {
+    this.service.atualizarEmpregado(this.id, this.empregado).subscribe(data => {
+      this.irParaListaDeEmpregados();
+    },
+      error => console.log(error)
+
+    );
+  }
+
+  // go to employees list
+  irParaListaDeEmpregados() {
+    this.router.navigate(['/empregados']);
   }
 
 }

@@ -4,7 +4,7 @@
 
     <br>
 
-    <form>
+    <form (ngSubmit)="enviar()">
         <div class="form-group">
             <label for="Nome">Nome</label>
             <input type="text" name="Nome" id="Nome" class="form-control" [(ngModel)]="empregado.nome">

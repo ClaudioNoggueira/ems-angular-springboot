@@ -26,4 +26,10 @@ export class EmpregadoService {
   pesquisarEmpregadoPorId(id: number): Observable<Empregado> {
     return this.httpClient.get<Empregado>(`${this.baseUrl}/${id}`);
   }
+
+  // update employee
+  atualizarEmpregado(id: number, obj: Empregado): Observable<Object> {
+    return this.httpClient.put(`${this.baseUrl}/${id}`, obj);
+  }
+
 }
