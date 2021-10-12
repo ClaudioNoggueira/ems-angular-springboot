@@ -8,6 +8,7 @@
         <th>Nome</th>
         <th>Sobrenome</th>
         <th>Email</th>
+        <th></th>
     </thead>
     <tbody>
         <tr *ngFor="let empregado of empregados">
@@ -15,6 +16,9 @@
             <td>{{empregado.nome}}</td>
             <td>{{empregado.sobrenome}}</td>
             <td>{{empregado.email}}</td>
+            <td>
+                <button (click)="atualizarEmpregado(empregado.id)" class="btn btn-info">Editar</button>
+            </td>
         </tr>
     </tbody>
 
