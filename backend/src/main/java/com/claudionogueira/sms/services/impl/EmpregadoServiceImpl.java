@@ -15,10 +15,15 @@ public class EmpregadoServiceImpl implements EmpregadoService {
 	@Autowired
 	private EmpregadoRepository repo;
 
-	//get all employees
+	// get all employees
 	@Override
 	public List<Empregado> listarTodos() {
 		return repo.findAll();
+	}
+
+	@Override
+	public void adicionarEmpregado(Empregado obj) {
+		repo.save(obj);
 	}
 
 }

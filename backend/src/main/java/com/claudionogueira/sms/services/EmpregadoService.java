@@ -6,6 +6,9 @@ import com.claudionogueira.sms.entities.Empregado;
 
 public interface EmpregadoService {
 
-	//get all employees
+	// get all employees
 	List<Empregado> listarTodos();
+
+	// create employee rest api
+	void adicionarEmpregado(Empregado obj);
 }
