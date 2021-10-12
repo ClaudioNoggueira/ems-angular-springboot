@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Empregado } from '../empregado';
+import { EmpregadoService } from '../empregado.service';
 
 @Component({
   selector: 'app-atualizar-empregado',
@@ -7,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtualizarEmpregadoComponent implements OnInit {
 
+  empregado: Empregado = new Empregado();
+  id!: number;
 
-  constructor() { }
+  constructor(private service: EmpregadoService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.service.pesquisarEmpregadoPorId(this.id).subscribe(data => {
+      this.empregado = data;
+    },
+      error => console.log(error)
+    );
   }
 
 }

@@ -21,4 +21,9 @@ export class EmpregadoService {
   adicionarEmpregado(obj: Empregado): Observable<Object> {
     return this.httpClient.post(`${this.baseUrl}`, obj);
   }
+
+  // find employee by id
+  pesquisarEmpregadoPorId(id: number): Observable<Empregado> {
+    return this.httpClient.get<Empregado>(`${this.baseUrl}/${id}`);
+  }
 }
