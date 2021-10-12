@@ -32,7 +32,7 @@ public class EmpregadoServiceImpl implements EmpregadoService {
 	@Override
 	public Empregado pesquisarEmpregadoPorId(Integer id) {
 		return repo.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Empregado com id '" + id + "' não existe"));
+				.orElseThrow(() -> new ResourceNotFoundException("Empregado com id '" + id + "' não encontrado"));
 	}
 
 	// update employee
@@ -45,4 +45,9 @@ public class EmpregadoServiceImpl implements EmpregadoService {
 		repo.save(attObj);
 	}
 
+	@Override
+	public void excluirEmpregado(Integer id) {
+		Empregado entity = this.pesquisarEmpregadoPorId(id);
+		repo.delete(entity);
+	}
 }

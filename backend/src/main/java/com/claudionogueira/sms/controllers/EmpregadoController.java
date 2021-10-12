@@ -1,12 +1,15 @@
 package com.claudionogueira.sms.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.claudionogueira.sms.entities.Empregado;
 import com.claudionogueira.sms.services.EmpregadoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +46,13 @@ public class EmpregadoController {
 	@PutMapping("/empregados/{id}")
 	public ResponseEntity<Void> atualizarEmpregado(@RequestBody Empregado obj, @PathVariable Integer id) {
 		service.atualizarEmpregado(obj, id);
+		return ResponseEntity.noContent().build();
+	}
+
+	// delete employee
+	@DeleteMapping("/empregados/{id}")
+	public ResponseEntity<Void> excluirEmpregado(@PathVariable Integer id) {
+		service.excluirEmpregado(id);
 		return ResponseEntity.noContent().build();
 	}
 }

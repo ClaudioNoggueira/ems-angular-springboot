@@ -17,4 +17,7 @@ public interface EmpregadoService {
 
 	// update employee
 	void atualizarEmpregado(Empregado obj, Integer id);
+
+	// delete employee
+	void excluirEmpregado(Integer id);
 }
