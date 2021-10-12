@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaEmpregadosComponent } from './lista-empregados/lista-empregados.component';
+import { AdicionarEmpregadoComponent } from './adicionar-empregado/adicionar-empregado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaEmpregadosComponent
+    ListaEmpregadosComponent,
+    AdicionarEmpregadoComponent
   ],
   imports: [
     BrowserModule,
