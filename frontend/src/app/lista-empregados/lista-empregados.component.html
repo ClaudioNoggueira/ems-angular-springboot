@@ -17,8 +17,9 @@
             <td>{{empregado.sobrenome}}</td>
             <td>{{empregado.email}}</td>
             <td>
-                <button (click)="atualizarEmpregado(empregado.id)" class="btn btn-info">Editar</button>
+                <button (click)="atualizarEmpregado(empregado.id)" class="btn btn-warning">Editar</button>
                 <button (click)="excluirEmpregado(empregado.id)" class="btn btn-danger">Excluir</button>
+                <button (click)="detalhesEmpregado(empregado.id)" class="btn btn-info">Detalhes</button>
             </td>
         </tr>
     </tbody>
